@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-	
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
-	
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="musicPlayer.PlayerController">
-	<!-- TODO Add Nodes -->
+
+
+<AnchorPane prefHeight="300.0" prefWidth="300.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="musicPlayer.PlayerController">
+   <children>
+      <Button fx:id="playButton" layoutX="132.0" layoutY="247.0" mnemonicParsing="false" onAction="#playMusic" text="再生" />
+      <ListView fx:id="musicList" layoutX="50.0" layoutY="26.0" prefHeight="200.0" prefWidth="200.0" />
+   </children>
 </AnchorPane>
