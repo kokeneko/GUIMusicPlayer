@@ -1,2 +1,3 @@
 /bin/
-/src/Music/*.wma
+*.wma
+*.mp3

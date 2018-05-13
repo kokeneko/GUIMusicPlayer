@@ -5,10 +5,12 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="300.0" prefWidth="300.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="musicPlayer.PlayerController">
+<AnchorPane prefHeight="300.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="musicPlayer.PlayerController">
    <children>
       <Button fx:id="playButton" layoutX="132.0" layoutY="247.0" mnemonicParsing="false" onAction="#playMusic" text="再生" />
       <ListView fx:id="musicList" layoutX="50.0" layoutY="26.0" prefHeight="200.0" prefWidth="200.0" />
+      <Button fx:id="resumeButton" layoutX="211.0" layoutY="214.0" mnemonicParsing="false" onAction="#resumeMusic" text="再開" />
+      <Button fx:id="pauseButton" layoutX="211.0" layoutY="175.0" mnemonicParsing="false" onAction="#pauseMusic" text="ポーズ" />
+      <Button fx:id="stopButton" layoutX="211.0" layoutY="253.0" mnemonicParsing="false" onAction="#stopMusic" text="停止" />
    </children>
 </AnchorPane>
