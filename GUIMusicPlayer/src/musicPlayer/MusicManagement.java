@@ -5,7 +5,7 @@ import java.io.File;
 import javazoom.jlgui.basicplayer.BasicPlayer;
 import javazoom.jlgui.basicplayer.BasicPlayerException;
 
-public class MusicManagement {
+public class MusicManagement implements PlayerEvent {
 
 	public static BasicPlayer player;
 	public int musicStatus = 2; //STOPPED
