@@ -36,35 +36,35 @@ public class PlayerController {
 		newMusicName = musicList.getSelectionModel().getSelectedItem();
 
 		switch (music.musicStatus) {
-		case BasicPlayer.PLAYING : {
-			if (newMusicName.equals(nowMusicName)) {
-				music.pauseMusic();
+			case BasicPlayer.PLAYING : {
+				if (newMusicName.equals(nowMusicName)) {
+					music.pauseMusic();
+				}
+				else {
+					music.stopMusic();
+					nowMusicName = newMusicName;
+					music = new MusicManagement(nowMusicName);
+					music.playMusic();
+				}
+				break;
 			}
-			else {
-				music.stopMusic();
+			case BasicPlayer.PAUSED : {
+				if (newMusicName.equals(nowMusicName)) {
+					music.resumeMusic();
+				}
+				else {
+					nowMusicName = newMusicName;
+					music = new MusicManagement(nowMusicName);
+					music.playMusic();
+				}
+				break;
+			}
+			case BasicPlayer.STOPPED : {
 				nowMusicName = newMusicName;
 				music = new MusicManagement(nowMusicName);
 				music.playMusic();
+				break;
 			}
-			break;
-		}
-		case BasicPlayer.PAUSED : {
-			if (newMusicName.equals(nowMusicName)) {
-				music.resumeMusic();
-			}
-			else {
-				nowMusicName = newMusicName;
-				music = new MusicManagement(nowMusicName);
-				music.playMusic();
-			}
-			break;
-		}
-		case BasicPlayer.STOPPED : {
-			nowMusicName = newMusicName;
-			music = new MusicManagement(nowMusicName);
-			music.playMusic();
-			break;
-		}
 		}
 	}
 }
