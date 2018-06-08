@@ -7,11 +7,29 @@ public class SubButtonController {
 
 	@FXML private ToggleButton loopToggle, shuffleToggle;
 
-	private boolean loop, shuffle;
+	public static boolean loop, shuffle;
 
 	@FXML
 	private void initialize() {
+		loop = false;
+		shuffle = false;
+	}
 
+	@FXML
+	private void toggle() {
+		if (loopToggle.isSelected()) {
+			loopToggle.setText("loopON");
+			loop = true;
+		}
+		else {
+			loopToggle.setText("loopOFF");
+			loop = false;
+		}
+	}
+
+	public boolean loop() {
+
+		return loop;
 	}
 
 

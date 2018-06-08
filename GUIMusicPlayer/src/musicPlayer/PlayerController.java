@@ -1,5 +1,8 @@
 package musicPlayer;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
@@ -13,19 +16,22 @@ public class PlayerController {
 	@FXML private AnchorPane subButton;
 	@FXML private SubButtonController subButtonController;
 
-	@FXML private ListView<String> musicList;
+	@FXML private ListView<String> musicListView;
 	@FXML private Button mainButton;
 
 	public static MusicManagement music;
-	String newMusicName, nowMusicName;
-
+	private String newMusicName, nowMusicName;
+	public static List<String> musicList = new ArrayList<String>();
 	@FXML
 	private void initialize() throws BasicPlayerException {
 		FileManagement filemanage = new FileManagement();
 		int number = filemanage.musicNumber();
 
+		musicList.clear();
+
 		for (int i = 0; i < number; i++) {
-			musicList.getItems().add(filemanage.musicName(i));
+			musicListView.getItems().add(filemanage.musicName(i));
+			musicList.add(filemanage.musicName(i));
 		}
 
 		music = new MusicManagement();
@@ -33,7 +39,7 @@ public class PlayerController {
 
 	@FXML
 	private void mainButtonAction() throws BasicPlayerException {
-		newMusicName = musicList.getSelectionModel().getSelectedItem();
+		newMusicName = musicListView.getSelectionModel().getSelectedItem();
 
 		switch (music.musicStatus) {
 			case BasicPlayer.PLAYING : {
