@@ -16,8 +16,6 @@ public class MusicManagement {
 
 	//曲名を受け取ってインスタンスを生成
 	public MusicManagement(String name) throws BasicPlayerException {
-		System.out.println(name);
-
 		player = new BasicPlayer();
 
 		//リスナーの追加
@@ -33,30 +31,11 @@ public class MusicManagement {
 				if(arg0.getCode() == BasicPlayerEvent.EOM) {
 					try {
 						Thread.sleep(1); //無いと動かない
-					} catch (InterruptedException e1) {
-						e1.printStackTrace();
-					}
-
-					try {
-						int index;
-						String nextName;
-
-						if (!SubButtonController.loop) {
-							index = PlayerController.musicList.indexOf(name);
-							if (index + 1 == PlayerController.musicList.size()) {
-								nextName = PlayerController.musicList.get(0);
-							}
-							else {
-								nextName = PlayerController.musicList.get(index + 1);
-							}
-
-							PlayerController.music = new MusicManagement(nextName);
-						}
-
-						PlayerController.music.playMusic();
-					} catch (BasicPlayerException e) {
+					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
+					EndOfMusic eom = new EndOfMusic();
+					eom.nextMusic(name);
 				}
 			}
 		});
