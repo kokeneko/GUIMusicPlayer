@@ -56,28 +56,25 @@ public class MusicManagement {
 	public void playMusic() throws BasicPlayerException {
 		player.play();
 		musicStatus = BasicPlayer.PLAYING;
-		System.out.println(musicStatus);
+		player.setGain(SubButtonController.volume);
 	}
 
 	//一時停止
 	public void pauseMusic() throws BasicPlayerException {
 		player.pause();
 		musicStatus = BasicPlayer.PAUSED;
-		System.out.println(musicStatus);
 	}
 
 	//再開
 	public void resumeMusic() throws BasicPlayerException {
 		player.resume();
 		musicStatus = BasicPlayer.PLAYING;
-		System.out.println(musicStatus);
 	}
 
 	//停止
 	public void stopMusic() throws BasicPlayerException {
 		player.stop();
 		musicStatus = BasicPlayer.STOPPED;
-		System.out.println(musicStatus);
 	}
 
 

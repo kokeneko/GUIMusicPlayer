@@ -22,6 +22,7 @@ public class PlayerController {
 	public static MusicManagement music;
 	private String newMusicName, nowMusicName;
 	public static List<String> musicList = new ArrayList<String>();
+
 	@FXML
 	private void initialize() throws BasicPlayerException {
 		FileManagement filemanage = new FileManagement();

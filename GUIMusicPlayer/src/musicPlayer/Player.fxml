@@ -8,7 +8,7 @@
 <AnchorPane prefHeight="300.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="musicPlayer.PlayerController">
    <children>
       <fx:include fx:id="subButton" source="subButton.fxml" />
-      <ListView fx:id="musicListView" layoutX="50.0" layoutY="26.0" prefHeight="200.0" prefWidth="200.0" />
-      <Button fx:id="mainButton" layoutX="111.0" layoutY="247.0" mnemonicParsing="false" onAction="#mainButtonAction" text="Button" />
+      <ListView fx:id="musicListView" layoutX="29.0" layoutY="22.0" prefHeight="200.0" prefWidth="200.0" />
+      <Button fx:id="mainButton" layoutX="111.0" layoutY="255.0" mnemonicParsing="false" onAction="#mainButtonAction" text="Button" />
    </children>
 </AnchorPane>
