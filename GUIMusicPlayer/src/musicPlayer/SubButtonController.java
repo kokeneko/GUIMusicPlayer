@@ -24,7 +24,7 @@ public class SubButtonController {
 	}
 
 	@FXML
-	private void toggle() {
+	private void loopToggle() {
 		if (loopToggle.isSelected()) {
 			loopToggle.setText("loopON");
 			loop = true;
@@ -35,6 +35,12 @@ public class SubButtonController {
 		}
 	}
 
+	@FXML
+	private void shuffleToggle() {
+
+	}
+
+	@FXML
 	public void getVolume() throws BasicPlayerException {
 		volume = volumeBar.getValue() / 100;
 		MusicManagement.player.setGain(volume);

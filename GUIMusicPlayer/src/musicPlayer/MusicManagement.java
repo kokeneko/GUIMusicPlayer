@@ -77,6 +77,4 @@ public class MusicManagement {
 		musicStatus = BasicPlayer.STOPPED;
 	}
 
-
-
 }

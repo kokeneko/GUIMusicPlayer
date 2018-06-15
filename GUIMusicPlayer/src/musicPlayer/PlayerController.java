@@ -22,6 +22,7 @@ public class PlayerController {
 	public static MusicManagement music;
 	private String newMusicName, nowMusicName;
 	public static List<String> musicList = new ArrayList<String>();
+	public static List<String> shuffleMusicList = new ArrayList<String>();
 
 	@FXML
 	private void initialize() throws BasicPlayerException {
@@ -34,6 +35,8 @@ public class PlayerController {
 			musicListView.getItems().add(filemanage.musicName(i));
 			musicList.add(filemanage.musicName(i));
 		}
+
+		shuffleMusicList.addAll(musicList);
 
 		music = new MusicManagement();
 	}
@@ -74,4 +77,5 @@ public class PlayerController {
 			}
 		}
 	}
+
 }
