@@ -7,8 +7,8 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="musicPlayer.SubButtonController">
    <children>
-      <ToggleButton fx:id="loopToggle" layoutX="13.0" layoutY="247.0" mnemonicParsing="false" onAction="#loopToggle" text="Loop" />
-      <ToggleButton fx:id="shuffleToggle" layoutX="207.0" layoutY="247.0" mnemonicParsing="false" onAction="#shuffleToggle" text="Shuffle" />
+      <ToggleButton fx:id="loopToggle" layoutX="13.0" layoutY="247.0" mnemonicParsing="false" onAction="#loopToggle" text="LoopOFF" />
+      <ToggleButton fx:id="shuffleToggle" layoutX="207.0" layoutY="247.0" mnemonicParsing="false" onAction="#shuffleToggle" text="ShuffleOFF" />
       <Slider fx:id="volumeBar" layoutX="246.0" layoutY="14.0" onMouseReleased="#getVolume" orientation="VERTICAL" prefHeight="180.0" prefWidth="21.0" />
       <Text fx:id="volumeText" layoutX="248.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="🔊" />
       <Slider fx:id="seekBar" layoutX="25.0" layoutY="226.0" prefHeight="21.0" prefWidth="250.0" />

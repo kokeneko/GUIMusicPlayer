@@ -28,12 +28,15 @@ public class MusicManagement {
 			public void setController(BasicController arg0) {}
 			@Override
 			public void stateUpdated(BasicPlayerEvent arg0) {
+				//音楽が終了したとき
 				if(arg0.getCode() == BasicPlayerEvent.EOM) {
+					//1ミリ秒止める(無いと動かない)
 					try {
-						Thread.sleep(1); //無いと動かない
+						Thread.sleep(1);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
+					//EOMの処理
 					EndOfMusic eom = new EndOfMusic();
 					eom.nextMusic(name);
 				}
@@ -45,7 +48,6 @@ public class MusicManagement {
 
 		player.open(file);
 		musicStatus = BasicPlayer.OPENED;
-		System.out.println(musicStatus);
 	}
 
 	public MusicManagement() throws BasicPlayerException {
