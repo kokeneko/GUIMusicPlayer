@@ -13,9 +13,11 @@ public class MusicManagement {
 
 	public static BasicPlayer player;
 	public int musicStatus = BasicPlayer.STOPPED;
+	public static String nowMusicName;
 
 	//曲名を受け取ってインスタンスを生成
 	public MusicManagement(String name) throws BasicPlayerException {
+		nowMusicName = name;
 		player = new BasicPlayer();
 
 		//リスナーの追加

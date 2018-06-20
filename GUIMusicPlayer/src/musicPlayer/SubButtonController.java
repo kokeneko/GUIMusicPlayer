@@ -3,6 +3,7 @@ package musicPlayer;
 import java.util.Collections;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.text.Text;
@@ -14,6 +15,7 @@ public class SubButtonController {
 	@FXML private Slider volumeBar = new Slider(0, 100, 50.0);
 	@FXML private Slider seekBar;
 	@FXML private Text volumeText;
+	@FXML private Button nextButton, previousButton;
 
 	public static boolean loop, shuffle;
 	public static double volume;
@@ -63,6 +65,22 @@ public class SubButtonController {
 		else {
 			volumeText.setText("🔊");
 		}
+	}
+
+	@FXML
+	private void nextMusic() throws BasicPlayerException {
+		MusicManagement player = new MusicManagement();
+		player.stopMusic();
+		MusicTransition mt = new MusicTransition();
+		mt.musicTransition(MusicManagement.nowMusicName, "NEXT");
+	}
+
+	@FXML
+	private void previousMusic() throws BasicPlayerException {
+		MusicManagement player = new MusicManagement();
+		player.stopMusic();
+		MusicTransition mt = new MusicTransition();
+		mt.musicTransition(MusicManagement.nowMusicName, "PREVIOUS");
 	}
 
 }
